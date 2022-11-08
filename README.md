@@ -1,6 +1,12 @@
-# tiny-emitter
+# tiny-emitter fork
 
 A tiny (less than 1k) event emitter library.
+
+## About this fork
+This fork features some improvements:
+
+- typescript typings for the events
+- ignores errors thrown by event listeners (it logs them but does not fail to invoke other listeners anymore)
 
 ## Install
 

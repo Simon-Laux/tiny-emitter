@@ -33,7 +33,11 @@ E.prototype = {
     var len = evtArr.length;
 
     for (i; i < len; i++) {
-      evtArr[i].fn.apply(evtArr[i].ctx, data);
+      try {
+        evtArr[i].fn.apply(evtArr[i].ctx, data);
+      } catch (error) {
+        console.error("event listener for event '"+String(name)+"' threw an error:", error, evtArr[i].fn);
+      }
     }
 
     return this;

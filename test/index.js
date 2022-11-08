@@ -215,3 +215,15 @@ test('exports an instance', function (t) {
   t.ok(emitter instanceof Emitter, 'an instance of the Emitter class');
   t.end();
 });
+
+test('ignores errors', function (t) {
+  var emitter = new Emitter();
+  emitter.on("hi", ()=> {
+    throw new Error("hello")
+  })
+  emitter.on("hi", ()=> {
+    t.pass("second listener is still run, even if one before threw an error")
+    t.end();
+  })
+  t.doesNotThrow(()=>emitter.emit("hi"))
+});
