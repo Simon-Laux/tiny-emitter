@@ -13,7 +13,7 @@ This fork features some improvements:
 ### npm
 
 ```
-npm install tiny-emitter --save
+npm install @deltachat/tiny-emitter --save
 ```
 
 ## Usage
